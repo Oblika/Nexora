@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courier System</title>
+    <link rel="stylesheet" href="../css/Courier.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</head>
+<body>
+    <button class="butoni-home" onclick="window.location.href='Login.html';">LogOut</button>
+    <div class="courier-packages-section">
+        <h2>🚚 Kërko Paketën</h2>
+        <div class="search-container">
+
+            <input type="text" id="searchInput" placeholder="Kërko Numrin e Paketës...">
+            <button id="searchButton" >Kërko</button>
+
+
+        </div>
+        <table class="packages-table">
+            <thead>
+                <tr>
+                    <th>Tracking Number</th>
+                    <th>Sender Name</th>
+                    <th>Arrival Date </th>
+                    <th>Current Location</th>
+                    <th>Recipient Name</th>
+                    <th>Contact Number</th>
+                    <th>Delivery Address</th>
+                </tr>
+            </thead>
+            <tbody id="courierPaketatBody">
+                <!-- Paketa do të shfaqet këtu -->
+            </tbody>
+        </table>
+    </div>
+
+    <form class="contact-form" action="https://formspree.io/f/xeoabegq" method="POST">
+        <h1>Njofto për Paketën</h1>
+    <input type="email" name="email" placeholder="Email-i juaj" required>
+
+    <textarea id="message" name="message" rows="8" required>
+Përshëndetje,
+
+Paketa juaj nga Nexora është përditësuar.
+Vendndodhja e re: [Vendodhja e Re]
+
+Ju lutem vizitoni faqen tonë në https://nexora.com për më shumë informacion.
+
+Faleminderit që përdorni Nexora!
+    </textarea>
+
+    <button type="submit"> 📦 Dërgo Mesazh</button>
+    </form>
+
+    <script src="../courier.js"></script>
+</body>
+</html>

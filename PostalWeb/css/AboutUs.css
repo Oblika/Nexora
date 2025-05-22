@@ -1,0 +1,1064 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif ;
+    background-color: #fdcc04;
+    color: #e7e7e7;
+    min-height: 100vh;
+    line-height: 1.5;
+
+}
+
+
+.image-gradient{
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 0.5;
+    z-index: -1;
+
+}
+
+.layer-blur{
+    height:0;
+    width: 30rem;
+    position: absolute;
+    top: 20%;
+    right: 0;
+    box-shadow: 0 0 700px 40px white;
+    rotate: -30deg;
+    z-index: 1;
+}
+
+/* ------------------------------------ CONTAINER --------------------------------------- */
+/* Variablat CSS */
+:root {
+  --primary-color: #fdcc04; /* Verdha kryesore */
+  --secondary-color: #1e88e5; /* Blu për kontrast */
+  --text-color: #212121; /* Tekst i errët */
+  --bg-color: #fef7d0; /* Sfond i lehtë i verdhë */
+  --accent-color: #ff6f00; /* Portokalli për detaje */
+  --shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
+  --transition: all 0.3s ease;
+}
+
+/* Reset dhe bazë */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Parandalon shiritin horizontal */
+  background: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Inter', sans-serif;
+}
+
+/* Container */
+.container {
+  width: 100%;
+  min-height: 100vh; /* Siguron lartësi të plotë */
+  padding: 0; /* Heq padding për full screen */
+  position: relative;
+  overflow: hidden;
+}
+
+/* Header */
+header {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: var(--shadow);
+  width: 100%; /* Siguron shtrirje të plotë */
+}
+
+header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+nav a {
+  font-size: 1.1rem;
+  text-decoration: none;
+  color: var(--text-color);
+  position: relative;
+  transition: var(--transition);
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background: var(--primary-color);
+  transition: var(--transition);
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+.btn-signing {
+  background: var(--primary-color);
+  color: var(--text-color);
+  padding: 0.75rem 2rem;
+  border-radius: 12px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: var(--shadow);
+}
+
+.btn-signing:hover {
+  background: var(--accent-color);
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Main Content */
+main {
+  min-height: calc(100vh - 80px);
+  display: grid;
+  place-items: center;
+  padding: 2rem 0; /* Padding minimal për estetikë */
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--bg-color) 100%);
+  width: 100%; /* Shtrirje e plotë */
+}
+
+.content {
+  max-width: 800px; /* Rritur për pamje më të gjerë */
+  padding: 0 2rem;
+  text-align: center;
+}
+
+.tag-box {
+  display: inline-flex;
+  padding: 4px;
+  border-radius: 50px;
+  background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+  box-shadow: var(--shadow);
+  margin-bottom: 2rem;
+}
+
+.tag-box .tag {
+  background: white;
+  border-radius: 50px;
+  padding: 0.5rem 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.tag-box .tag:hover {
+  background: var(--primary-color);
+  color: var(--text-color);
+}
+
+.content h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  margin: 1.5rem 0;
+  background: linear-gradient(45deg, var(--text-color), var(--accent-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.2;
+}
+
+.description {
+  font-size: 1.1rem;
+  color: var(--text-color);
+  opacity: 0.85;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+}
+
+.buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  header {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  nav {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .content {
+    padding: 0 1rem;
+  }
+
+  .content h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .btn-signing {
+    padding: 0.5rem 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+}
+
+.btn-signing-main {
+    text-decoration: none;
+    background: linear-gradient(45deg, #ffeb3b, #fbc02d); /* Gradient në tonet e verdhës */
+    color: black;
+    padding: 0.6rem 2.5rem;
+    border: 2px solid #fbc02d; /* Kufij të theksuar për të shtuar kontrast */
+    border-radius: 50px;
+    font-size: clamp(1.2rem, 3vw, 1.5rem); /* Për fleksibilitet në madhësi */
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    transition: transform 0.3s ease, background 0.3s ease; /* Animacion gjatë hover-it */
+}
+
+.btn-signing-main:hover {
+    background: linear-gradient(45deg, #fbc02d, #ffa000); /* Gradient më i ndezur gjatë hover-it */
+    transform: scale(1.05); /* Efekt zmadhimi */
+    color: #212121; /* Ngjyrë teksti pak më e errët për kontrast */
+}
+
+.robot-3d{
+    position: absolute;
+    top: 0;
+    right: -20%;
+
+}
+
+@media (max-width: 1300px){
+    header{
+        padding: 1rem 0.5rem;
+    }
+
+    .content{
+        margin-top: 85%;
+    }
+
+    .robot-3d{
+        scale: 0.8;
+        top: -20%;
+        right: 2%;
+    }
+}
+
+
+/* --------------------------------- MOBILE RESPONSIVE ---------------------------------------- */
+@media (max-width: 768px){
+    header{
+        padding: 1rem 0.1rem;
+    }
+
+    nav{
+        display: none;
+    }
+
+    header h1{
+        font-size: 2rem;
+    }
+
+    .btn-signing{
+        padding: 0.6rem 1.5rem;
+    }
+
+    .content{
+        margin-top: 25rem;
+    }
+
+    .robot-3d{
+        scale: 0.5;
+        top: -25%;
+        right: 0;
+    }
+
+    .content{
+        max-width: 30rem;
+        margin-left: 10%;
+    }
+
+    .tag-box{
+        width: 12em;
+    }
+
+    .content h1{
+        font-size: 2.5rem;
+    }
+
+    .description{
+        font-size: 1rem;
+    }
+
+
+
+    .btn-signing-main{
+        font-size: 0.8rem;
+        padding: 0.8rem 2rem;
+    }
+}
+
+
+/* ---------------------------------- Page 2 ----------------------------------------  */
+
+
+
+spline-viewer {
+    display: flex;
+}
+
+.page2-title {
+    position: absolute;
+    top: 100%;
+    left: 18%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: black;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 4.5rem;
+
+}
+
+
+
+/* ---------------------------------- Who We Are --------------------------------------- */
+
+/* Seksioni modern për "Why Choose Us?" */
+.choose-us {
+    background: linear-gradient(to right, #7b6302, #fdcc04); /* Gradient modern */
+    color: #fff;
+    text-align: center;
+    padding: 70px 50px; /* Padding më i madh për një pamje më e gjerë */
+    border-radius: 15px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25); /* Thellësi me hije */
+    margin: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Animacion dekorativ në sfond */
+.choose-us::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.2), transparent 70%);
+    animation: rotateBackground 15s linear infinite;
+    z-index: 0;
+}
+
+/* Animacion i sfondit */
+@keyframes rotateBackground {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.choose-us h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 3px;
+    z-index: 1;
+    position: relative;
+}
+
+.choose-us p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    line-height: 1.8;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 1;
+    position: relative;
+    font-st: italic;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Shton hijen e tekstit */
+}
+
+
+
+/* Element dekorativ shtesë */
+.choose-us::after {
+    content: '';
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent);
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.container2 {
+    display: flex;
+    justify-content: flex-end; /* E çon përmbajtjen (imazhin) në të djathtë */
+    align-items: center;
+    padding: 10px;
+}
+
+.reviewCEO {
+    width: 500px; /* Madhësia e imazhit */
+    border-radius: 15px; /* Forma e lakuar */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Hije për estetikë */
+    margin-right: 200px; /* Hapësirë midis imazhit dhe tekstit ose elementeve të tjerë */
+    margin-top: -200px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Efekt hover */
+.reviewCEO:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+
+/*------------------ Why Us 2 -------------------------------- */
+
+.why-us {
+    background: linear-gradient(to right, #fdcc04, #765e00); /* Gradient modern */
+    color: #fff;
+    text-align: center;
+    padding: 70px 50px; /* Hapësirë më e madhe për elegancë */
+    border-radius: 15px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25); /* Shton thellësi me hije */
+    margin: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Animacion dekorativ në sfond */
+.why-us::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    animation: rotateBackground 15s linear infinite;
+    z-index: 0;
+}
+
+
+
+.why-us h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 3px;
+    z-index: 1;
+    position: relative;
+    margin-left: 800px ;
+}
+
+.why-us p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    line-height: 1.8;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 1;
+    position: relative;
+    font-style: italic; /* Bën tekstin më elegant */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Shton hijen e tekstit */
+    margin-left: 900px ;
+}
+
+/* Element dekorativ shtesë */
+.why-us::after {
+    content: '';
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent);
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.container3 {
+    display: flex;
+    justify-content: flex-end; /* E çon përmbajtjen (imazhin) në të djathtë */
+    align-items: center;
+    padding: 10px;
+}
+
+.clientrev {
+    width: 500px; /* Madhësia e imazhit */
+    border-radius: 15px; /* Forma e lakuar */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Hije për estetikë */
+    margin-right: 60%; /* Hapësirë midis imazhit dhe tekstit ose elementeve të tjerë */
+    margin-top: -200px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Efekt hover */
+.clietrev:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+
+/* -------------------------------------- Comment ----------------------------------- */
+
+.feedback-form {
+    max-width: 700px;
+    padding: 40px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #f9f9f9, #e6e6e6);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 250%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.feedback-form h2 {
+    text-align: center;
+    margin-bottom: 30px; 
+    color: #333;
+    font-size: 2rem; 
+    font-weight: 700;
+    letter-spacing: 1px; 
+    text-transform: uppercase;
+}
+
+.feedback-form label {
+    display: block;
+    margin: 15px 0 8px;
+    font-weight: 600; 
+    color: #555;
+    font-size: 1.1rem;
+}
+
+.feedback-form input,
+.feedback-form textarea {
+    width: 100%;
+    padding: 15px; 
+    margin-bottom: 20px;
+    border: 2px solid #ccc; 
+    border-radius: 10px;
+    background: #fff; 
+    color: #333;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease; 
+}
+
+.feedback-form input:focus,
+.feedback-form textarea:focus {
+    border-color: #4CAF50; 
+    background: #f1f1f1; 
+}
+
+.feedback-form button {
+    width: 100%;
+    padding: 10px;
+    background: linear-gradient(90deg, #4CAF50, #45a049);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.feedback-form button:hover {
+    background: #3E8E41;
+    transform: scale(1.03);
+}
+
+.feedback-form button:active {
+    background: #368E3C; 
+    transform: scale(0.98); 
+}
+
+
+/*------------------------------ How we Work ------------------------------------------ */
+
+/* Seksioni modern për "How It Works" */
+.how-it-works {
+  padding: 80px 40px;
+  background: linear-gradient(135deg, #fdcc04, #fef7d0); /* Gradient verdhë i zbutur si dizajni i parë */
+  color: #212121; /* Tekst i errët për kontrast */
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15); /* Hije më delikate */
+  width: 100%; /* Full screen */
+  min-height: 70vh; /* Lartësi e plotë */
+}
+
+/* Efekt dekorativ në sfond */
+.how-it-works::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.15), transparent 70%); /* Zbutur */
+  animation: rotateBackground 25s linear infinite; /* Kohëzgjatje më e gjatë */
+  z-index: 0;
+  opacity: 0.5; /* Më delikate */
+}
+
+@keyframes rotateBackground {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.how-it-works h2 {
+  font-size: 2.8rem;
+  margin-bottom: 50px;
+  background: linear-gradient(45deg, #212121, #ff6f00); /* Gradient si dizajni i parë */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: none; /* Hequr text-shadow për pamje moderne */
+  position: relative;
+  z-index: 1;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.steps-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+}
+
+.step {
+  background: #ffffff; /* Sfoni i bardhë për kontrast modern */
+  border: 2px solid #fdcc04; /* Kufi verdhë */
+  border-radius: 20px;
+  padding: 30px;
+  width: 280px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15); /* Hije më delikate */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.step:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 30px rgba(253, 204, 4, 0.5);
+  background: linear-gradient(135deg, #f5f5f5, #ffffff); /* Gradient subtil gjatë hover */
+}
+
+.step span {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 15px;
+  color: #fdcc04; /* Verdhë për temën */
+  text-shadow: none; /* Hequr text-shadow për pamje të pastër */
+}
+
+.step h3 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  color: #212121; /* Tekst i errët si dizajni i parë */
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.step p {
+  font-size: 1rem;
+  color: #212121; /* Tekst i errët për lexueshmëri */
+  line-height: 1.6;
+  opacity: 0.85; /* Zbutur për estetikë */
+}
+
+/* Responsivitet për ekrane të vogla */
+@media (max-width: 768px) {
+  .how-it-works {
+    padding: 60px 20px;
+  }
+
+  .how-it-works h2 {
+    font-size: 2.2rem;
+  }
+
+  .step {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .how-it-works h2 {
+    font-size: 2rem;
+  }
+
+  .step {
+    max-width: 280px;
+  }
+}
+
+/* ---------------------------------- Why Choose Nexora?------------------------------------------------------ */
+/* Seksioni modern për "Why Nexora" */
+.why-nexora {
+  padding: 80px 40px;
+  background: linear-gradient(135deg, #fdcc04, #fef7d0); /* Gradient verdhë i zbutur si dizajni i parë */
+  color: #212121; /* Tekst i errët për kontrast */
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15); /* Hije më delikate */
+  width: 100%; /* Full screen */
+  min-height: 70vh; /* Lartësi e plotë */
+}
+
+/* Efekt dekorativ në sfond */
+.why-nexora::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.15), transparent 70%); /* Zbutur */
+  animation: rotateBackground 25s linear infinite; /* Kohëzgjatje më e gjatë */
+  z-index: 0;
+  opacity: 0.5; /* Më delikate */
+}
+
+@keyframes rotateBackground {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.why-nexora h2 {
+  font-size: 2.8rem;
+  margin-bottom: 50px;
+  background: linear-gradient(45deg, #212121, #ff6f00); /* Gradient si dizajni i parë */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: none; /* Hequr text-shadow për pamje moderne */
+  position: relative;
+  z-index: 1;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.reasons-container {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+.reason {
+  background: #ffffff; /* Sfoni i bardhë për kontrast modern */
+  border: 2px solid #fdcc04; /* Kufi verdhë */
+  border-radius: 16px;
+  padding: 25px;
+  width: 280px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15); /* Hije më delikate */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.reason:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(253, 204, 4, 0.5);
+  background: linear-gradient(135deg, #f5f5f5, #ffffff); /* Gradient subtil gjatë hover */
+}
+
+.reason h3 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  color: #fdcc04; /* Verdhë për temën */
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.reason p {
+  font-size: 1rem;
+  color: #212121; /* Tekst i errët për lexueshmëri */
+  line-height: 1.6;
+  opacity: 0.85; /* Zbutur për estetikë */
+}
+
+/* Responsivitet për ekrane të vogla */
+@media (max-width: 768px) {
+  .why-nexora {
+    padding: 60px 20px;
+  }
+
+  .why-nexora h2 {
+    font-size: 2.2rem;
+  }
+
+  .reason {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .why-nexora h2 {
+    font-size: 2rem;
+  }
+
+  .reason {
+    max-width: 280px;
+  }
+}
+
+/*------------------- What do our customers say?----------------------------------*/
+
+/* Seksioni modern për "Testimonials" */
+.testimonials {
+  padding: 5rem 2.5rem;
+  background: linear-gradient(135deg, #fdcc04, #fef7d0); /* Gradient verdhë i zbutur si dizajni i parë */
+  color: #212121; /* Tekst i errët për kontrast */
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15); /* Hije më delikate */
+  width: 100%; /* Full screen */
+  min-height: 70vh; /* Lartësi e plotë */
+}
+
+/* Efekt dekorativ në sfond */
+.testimonials::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.15), transparent 70%); /* Zbutur */
+  animation: rotateBackground 25s linear infinite; /* Kohëzgjatje më e gjatë */
+  z-index: 0;
+  opacity: 0.5; /* Më delikate */
+}
+
+@keyframes rotateBackground {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.testimonials h2 {
+  font-size: clamp(2.2rem, 5vw, 2.8rem);
+  margin-bottom: 3rem;
+  background: linear-gradient(45deg, #212121, #ff6f00); /* Gradient si dizajni i parë */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: none; /* Hequr text-shadow për pamje moderne */
+  position: relative;
+  z-index: 1;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.testimonial-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.testimonial {
+  background: #ffffff; /* Sfoni i bardhë për kontrast modern */
+  border: 2px solid #fdcc04; /* Kufi verdhë */
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15); /* Hije më delikate */
+  font-style: italic;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.testimonial:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(253, 204, 4, 0.5);
+  background: linear-gradient(135deg, #f5f5f5, #ffffff); /* Gradient subtil gjatë hover */
+}
+
+.testimonial p {
+  font-size: 1rem;
+  color: #212121; /* Tekst i errët për lexueshmëri */
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  opacity: 0.85; /* Zbutur për estetikë */
+}
+
+.testimonial span {
+  display: block;
+  font-weight: 600;
+  color: #fdcc04; /* Verdhë për konsistencë */
+  letter-spacing: 1px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .testimonials {
+    padding: 3.75rem 1.25rem;
+  }
+
+  .testimonials h2 {
+    font-size: clamp(1.8rem, 4vw, 2.2rem);
+  }
+
+  .testimonial {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .testimonials h2 {
+    font-size: clamp(1.6rem, 3.5vw, 2rem);
+  }
+
+  .testimonial {
+    max-width: 280px;
+  }
+}
+
+/*-------------------------- Contact Us  ---------------------------------*/
+.contact-section {
+  padding: 5rem 2rem;
+  background: linear-gradient(135deg, #fdcc04, #fef7d0); /* Gradient i verdhë më i zbutur */
+  color: #212121;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem; /* Hapësira midis elementeve */
+}
+
+.contact-section h2 {
+  font-size: clamp(2.5rem, 5vw, 3rem);
+  margin-bottom: 2rem;
+  background: linear-gradient(90deg, #212121, #fdcc04);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.contact-container {
+  max-width: 800px;
+  width: 100%;
+  background: #ffffff; /* Sfoni i bardhë minimalist për formën */
+  border: 3px solid #fdcc04; /* Kufi i verdhë që e dallon */
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Hije më delikate */
+  padding: 2rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 2px solid #fdcc04; /* Kufi i verdhë për vazhdimësi dizajni */
+  background-color: #fef7d0; /* Sfoni të verdhë të zbutur */
+  font-size: 1rem;
+  color: #212121;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #ff6f00; /* Ngjyrë portokalli gjatë fokusit */
+  box-shadow: 0 4px 8px rgba(255, 111, 0, 0.4);
+}
+
+.contact-form button {
+  padding: 0.75rem 1.5rem;
+  background-color: #fdcc04; /* Buton i verdhë */
+  color: #212121;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 10px rgba(253, 204, 4, 0.4);
+}
+
+.contact-form button:hover {
+  background-color: #ff6f00; /* Ngjyrë portokalli gjatë hover */
+  transform: translateY(-3px);
+}
+

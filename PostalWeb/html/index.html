@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nexora</title>
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <nav>
+      <div class="logo">Nexora</div>
+      <div class="nav-items">
+        <a href="AboutUs.html">About Us</a>
+        <a href="Login.html">Log in</a>
+      </div>
+    </nav>
+    <section class="hero">
+      <div class="hero-container">
+        <div class="column-left">
+          <h1>Fast tracking, safe delivery!</h1>
+          <p>Try it and see why we are different.</p>
+          <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Enter package ID..." />
+            <button class="button" onclick="kerkoPaketen()">Search</button>
+          </div>
+          <div id="result" style="margin-top: 20px;"></div> <!-- Shto për të shfaqur rezultatin -->
+        </div>
+        <div class="column-right">
+          <img src="../img/img1.svg" alt="illustration" class="hero-image" />
+        </div>
+      </div>
+    </section>
+    <script src="../app.js"></script>
+  </body>
+</html>

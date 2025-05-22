@@ -1,0 +1,224 @@
+/* Stilimi i përgjithshëm */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', Arial, sans-serif;
+  }
+  
+  body {
+    background: linear-gradient(to bottom right, #fdcc04, #ffc93c); /* Gradient modern */
+    color: #000;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  
+  /* Navbar modern */
+  nav {
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2)
+    
+  }
+  
+  .logo {
+    font-size: 2rem;
+    font-weight: bold;
+    color: black;
+    text-transform: uppercase;
+    transition: none;
+  }
+  
+  .logo:hover {
+    color: #fff; /* Efekt hover për logo */
+  }
+  
+  nav a {
+    margin: 0; /* Hiq çdo hapësirë lart dhe poshtë */
+    padding: 0;
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+    padding: 0;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+  }
+  
+  nav a:hover {
+    color: white; /* Ndryshim smooth ngjyre */
+  }
+  
+  /* Hero më elegant */
+  .hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    text-align: center;
+    padding: 0;
+    border-radius: 10px;
+    box-shadow: none;
+    margin-top: -170px;
+    margin-left: 800px;
+    
+ }
+  
+  .hero h1 {
+    font-size: 3.7rem;
+    font-weight: bold;
+    color: black;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    letter-spacing: 1.5px;
+    position: relative;
+    margin: 0;
+    animation: fadeInScale 2s ease-in-out;
+  }
+
+  @keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+  
+  .hero p {
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+    color: #000;
+    line-height: 1.8;
+  }
+  
+  /* Butona smooth */
+  button {
+    padding: 1rem 2.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    color: #000;
+    background: #fdcc04;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: all 0.4s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    border-radius: 30px;
+  }
+  
+  button:hover {
+    background: #ffc93c;
+    transform: translateY(-3px); /* Lëvizje smooth gjatë hover */
+  }
+  
+  /* Forma moderne */
+  .form-section {
+    padding: 3rem;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    margin: 2rem auto;
+    width: 80%;
+    max-width: 550px;
+    margin-top: -370px;
+    margin-left: 200px;
+  }
+  
+  form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  form input,
+  form textarea {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background: #f7f7f7; /* Ngjyrë moderne e hapur */
+    color: #000;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+  }
+  
+  form input:focus,
+  form textarea:focus {
+    border-color: #fdcc04;
+    box-shadow: 0 0 10px rgba(253, 204, 4, 0.6); /* Fokus elegant */
+    outline: none;
+  }
+  
+  button.submit-button {
+    width: 100%;
+    padding: 1rem;
+    background: #fdcc04;
+    color: #000;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: bold;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+  }
+  
+  button.submit-button:hover {
+    background: #ffc93c;
+    transform: scale(1.05);
+  }
+  
+
+  .data-table {
+    width: 70%;
+    margin: 0 auto 0 0;
+    border-collapse: collapse;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+    margin: 0;
+    position: relative;
+    top: 0; /* Vendos tabelën në pjesën e sipërme të prindit */
+    left: 0; /* Poziciono tabelën në skajin e majtë */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4)
+    
+  }
+
+  
+  .data-table th {
+    background: #fdcc04;
+    color: #000;
+    font-weight: bold;
+    padding: 1rem;
+    text-transform: uppercase;
+  }
+  
+  .data-table td {
+    background: #fff;
+    color: #000;
+    padding: 0.8rem;
+  }
+  
+  .data-table tr:hover {
+    background: linear-gradient(to left, #fdcc04, #ffc93c);
+    transform: scale(1.02);
+    transition: all 0.3s ease;
+  }
+  
+  .AdminImage {
+    position: absolute; /* Allows precise positioning */
+    right: 0; /* Moves the image to the right */
+    left: 750px;
+    width: 850px; /* Adjust image size as needed */
+    height: auto; /* Maintains aspect ratio */
+    margin: 200px; /* Optional: Adds spacing from the edges */
+    top: -60px;
+    
+}

@@ -1,0 +1,190 @@
+body {
+    display: flex;
+    justify-content: center; /* Qendron horizontalisht */
+    align-items: center; /* Qendron verticalisht */
+    height: 100vh; /* Përdor lartësinë e plotë të ekranit */
+    margin: 0; /* Hiqni marginën e parazgjedhur */
+}
+
+
+.titulli {
+    position: absolute;
+    top: 20px !important; /* Distanca nga lart */
+    left: 50%; /* Qendër horizontalisht */
+    transform: translateX(-50%); /* Qendron në mes */
+    font-size: 8vw; /* Madhësia e shkronjave në raport me gjerësinë e ekranit */
+    font-weight: bold;
+    font-style: oblique;
+    font-family: 'Poppins', sans-serif; /* Font modern */
+    color: #000; /* Ngjyra e stiluar */
+    text-transform: uppercase; /* Tekst kapital */
+    letter-spacing: 3px; /* Hapësirë midis shkronjave */
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); /* Hijet e thella */
+    opacity: 0;
+    animation: fadeInTitle 2s ease-in-out forwards;
+    margin: 0;
+    margin-left: -280px;
+}
+/* Animacion smooth për titullin */
+@keyframes fadeInTitle {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px); /* Nis nga lart */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Përfundon në pozicionin normal */
+    }
+}
+
+.slogan {
+    position: absolute;
+    top: 180px; /* Poshtë titullit */
+    left: 50%; /* Qendër horizontalisht */
+    transform: translateX(-50%); /* Qendrim perfekt horizontal */
+    font-size: 1.6rem; /* Madhësia e sloganit në raport me gjerësinë e ekranit */
+    font-weight: 200; /* Trashësi mesatare për elegancë */
+    font-family: 'Poppins', sans-serif; /* Font modern */
+    font-style: italic; /* Italic për prekje artistike */
+    color: #000; /* Ngjyra kryesore */
+    text-align: center; /* Tekst qendror */
+    opacity: 0; /* Fillon i padukshëm */
+    animation: fadeInSlogan 2s ease-in-out forwards; /* Animacion smooth */
+    margin-left: -200px;
+
+}
+
+
+/* Animacion smooth për sloganin */
+@keyframes fadeInSlogan {
+    0% {
+        opacity: 0;
+        transform: translateY(10px); /* Zhvendos pak poshtë fillimisht */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Kthehet në pozicion normal */
+    }
+}
+
+
+body {
+    background-color: #fdcc04;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+    
+}
+
+.container {
+    position: relative;
+    height: auto;
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    margin-right: 200px;
+    top: 50px;
+    
+}
+
+.header {
+    text-align: center;
+    padding: 20px;
+    background-color: #ffcc00;
+    border-radius: 5px;
+    
+}
+
+.header h1 {
+    margin: 0;
+    color: #333;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+table {
+    width: 100%;
+    border-collapse: col;
+    margin-top: 20px;
+    border-spacing: 0 10px;
+    margin-right: 500px;
+    
+    
+}
+
+th, td {
+    background-color: #fdcc04;
+    padding: 12px;
+    text-align: left;
+    border-top-left-radius: 10px; 
+    border-top-right-radius: 10px; 
+    border-bottom: 1px solid #e0e0e0;
+
+    background-color: rgba(255, 255, 255, 0.85);
+    color: #333;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    margin-left: 50px;
+    
+  
+}
+
+th {
+    background-color: #fdcc04;
+    color: #333;
+    
+}
+
+tr:hover td {
+    background-color: #fffacd;
+    transform: scale(1.02); /* Rritje e vogël gjatë hover-it */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Hijet gjatë hover-it */
+}
+
+.DeliveryLogo{
+    display: block;
+    margin: 0 auto; /* Qendron horizontalisht */
+    position: relative;/* Vendos hapësirë sipër */
+    max-width: 700px; /* Kufizon madhësinë e imazhit */
+    height: auto; /* Ruaj përmasat e duhura */
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: 100px;
+}
+
+
+.button-container {
+    text-align: center; /* Qendron butonin në qendër */
+    margin-top: 20px; /* Hapësirë mbi butonin */
+}
+
+#refreshButton {
+    background-color: #fdcc04; /* Ngjyra e verdhë tërheqëse */
+    color: #333; /* Tekst kontrastues */
+    border: none; /* Pa kufij */
+    padding: 10px 20px; /* Hapësirë e brendshme */
+    font-size: 1rem; /* Madhësia e shkronjave */
+    font-family: 'Poppins', sans-serif; /* Harmonizim me dizajnin */
+    font-weight: bold;
+    border-radius: 5px; /* Skaje të rrumbullakosura */
+    cursor: pointer; /* Tregon që është i klikueshëm */
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2); /* Hije për thellësi */
+    transition: all 0.3s ease-in-out; /* Efekt smooth gjatë hover-it */
+}
+
+#refreshButton:hover {
+    background-color: #e0b300; /* Ngjyrë më e errët gjatë hover-it */
+    transform: scale(1.1); /* Rritje e vogël për efekt vizual */
+}

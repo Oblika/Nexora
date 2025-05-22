@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <title>Nexora</title>
+    <link rel="stylesheet" href="../css/Paketa.css" />
+</head>
+<body>
+    <h1 class="titulli">Nexora</h1>
+    <h1 class="slogan">Fast tracking, safe delivery!</h1>
+    <img class="DeliveryLogo" src="/img/delivery.png" >
+
+    <div class="container">
+        <div class="header" id="receiverName">
+            <h1>Emri: <span id="emriMarresit"></span></h1>
+        </div>
+        
+        <table id="dataTable">
+            <thead>
+                <tr>
+                    <th>Tracking Number</th>
+                    <th>Sender Name</th>
+                    <th>Arrival Date</th>
+                    <th>Current Location</th>
+                    <th>Email</th>
+                    <th>Delivery Address</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody"></tbody>
+        </table>
+
+        <!-- Butoni i shtuar -->
+        <div class="button-container">
+            <button id="refreshButton">Home Page</button>
+        </div>
+    </div>
+
+    <script src="../app.js"></script>
+</body>
+</html>

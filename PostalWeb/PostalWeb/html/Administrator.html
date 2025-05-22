@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="../css/Administrator.css" />
+  </head>
+  <body>
+    <nav>
+      <div class="logo">Admin Panel</div>
+      <div>
+        <a href="#">Logout</a>
+      </div>
+    </nav>
+
+    <div class="hero">
+      <div class="hero-container">
+        <div class="column-left">
+          <h1>Welcome Admin</h1>
+          <p>Manage your packages easily by filling out the form below!</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-section">
+      <form id="adminForm" action="/submit-package" method="POST">
+        <label for="numriPaketes">Package Number</label>
+        <input type="text" id="numriPaketes" name="numriPaketes" placeholder="Enter package number..." required />
+
+        <label for="emriDerguesit">Sender's Name</label>
+        <input type="text" id="emriDerguesit" name="emriDerguesit" placeholder="Enter sender's name..." required />
+
+        <label for="kohaArdhjes">Arrival Time</label>
+        <input type="date" id="kohaArdhjes" name="kohaArdhjes" required />
+
+        <label for="vendodhjaPakos">Package Location</label>
+        <input type="text" id="vendodhjaPakos" name="vendodhjaPakos" placeholder="Enter package location..." required />
+
+        <label for="numriTelefonit">Phone Number</label>
+        <input type="text" id="numriTelefonit" name="numriTelefonit" placeholder="Enter phone number..." required />
+
+        <label for="adresa">Address</label>
+        <textarea id="adresa" name="adresa" placeholder="Enter address..." required></textarea>
+
+        <button type="submit">Submit Data</button>
+      </form>
+    </div>
+
+    <div class="admin-packages-section">
+      <h2>All Packages</h2>
+      <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Kërko ID e Paketës...">
+        <button onclick="searchButton">Kërko</button>
+      </div>
+      <table class="packages-table">
+        <thead>
+          <tr>
+            <th>Package Number</th>
+            <th>Sender's Name</th>
+            <th>Arrival Time</th>
+            <th>Package Location</th>
+            <th>Recipient's Name</th>
+            <th>Phone Number</th>
+            <th>Address</th>
+          </tr>
+        </thead>
+        <tbody id="adminPackagesBody">
+          <!-- Paketat do të shfaqen këtu me JavaScript -->
+        </tbody>
+      </table>
+    </div>
+
+    <script src="../admin.js"></script>
+  </body>
+</html>

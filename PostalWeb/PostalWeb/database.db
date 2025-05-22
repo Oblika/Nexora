@@ -1,0 +1,34 @@
+CREATE DATABASE paketadb;
+
+USE paketadb
+
+CREATE TABLE paketat (
+    numriPaketes VARCHAR(50) NOT NULL PRIMARY KEY,
+    emriDerguesit VARCHAR(100) NOT NULL,
+    kohaArdhjes VARCHAR(50) NOT NULL, 
+    vendodhjaPakos VARCHAR(100),
+    emriMarresit VARCHAR(100),
+    numriTelefonit VARCHAR(15),
+    adresa VARCHAR(255)
+);
+
+
+USE paketadb;
+
+INSERT INTO paketat (numriPaketes, emriDerguesit, kohaArdhjes, vendodhjaPakos, emriMarresit, numriTelefonit, adresa) 
+VALUES 
+    ('123', 'Tesla', '26 March 2025', 'New York', 'Andrew Tate', '0671112223', 'California'),
+    ('12345', 'Audi', '26 March 2025', 'Germany', 'MCGregor', '0671112223', 'Hamburger'),
+    ('PK124', 'SpaceX', '27 March 2025', 'Los Angeles', 'Elon Musk', '0683334445', 'Texas'),
+    ('PK125', 'Amazon', '28 March 2025', 'Seattle', 'Jeff Bezos', '0695556667', 'Washington');
+
+
+---------------------------------------------------------------------------------------------------------------------
+
+Krijimi i nhe Tabele te re:
+
+USE paketadb;
+
+INSERT INTO users (username, password, role)
+VALUES ('adminUser', 'hashedPassword1', 'admin'),
+       ('courierUser', 'hashedPassword2', 'courier');

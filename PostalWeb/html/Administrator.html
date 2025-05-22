@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="../css/Administrator.css" />
+  </head>
+  <body>
+    <nav>
+      <div class="logo">Admin Panel</div>
+      <div><a href="Login.html">Logout</a></div>
+    </nav>
+
+    <div class="hero">
+      <div class="hero-container">
+        <div class="column-left">
+          <h1>Welcome Admin</h1>
+          <p>Manage your packages easily by filling out the form below!</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab buttons -->
+    <div class="tabs-wrapper">
+      <div class="tabs">
+        <button class="tab-button" onclick="showTable('table1')">📋 Tabela</button>
+        <button class="tab-button" onclick="showTable('table2')">📦 Paketat</button>
+      </div>
+
+      <div class="form-section" id="table1">
+        <form id="adminForm" action="http://localhost:5000/submit-package" method="POST">
+          <label for="numriPaketes">Package Number</label>
+          <input type="text" id="numriPaketes" name="numriPaketes" placeholder="Enter package number..." required />
+
+          <label for="emriDerguesit">Sender's Name</label>
+          <input type="text" id="emriDerguesit" name="emriDerguesit" placeholder="Enter sender's name..." required />
+
+          <label for="kohaArdhjes">Arrival Time</label>
+          <input type="date" id="kohaArdhjes" name="kohaArdhjes" required />
+
+          <label for="vendodhjaPakos">Package Location</label>
+          <input type="text" id="vendodhjaPakos" name="vendodhjaPakos" placeholder="Enter package location..." required />
+
+          <label for="emriMarresit">Recipient's Name</label>
+          <input type="text" id="emriMarresit" name="emriMarresit" placeholder="Enter sender's name..." required />
+
+          <label for="email">Email</label>
+          <input type="text" id="email" name="email" placeholder="Enter email..." required />
+
+          <label for="adresa">Address</label>
+          <textarea id="adresa" name="adresa" placeholder="Enter address..." required></textarea>
+
+          <button type="submit">Submit Data</button>
+        </form>
+      </div>
+
+      <!-- Admin Package Section -->
+      <div class="admin-packages-section" id="table2">
+        <h2>All Packages</h2>
+        <div class="search-container">
+          <input type="text" id="searchInput" placeholder="Kërko ID e Paketës...">
+          <button onclick="searchPaketa()">Kërko</button>
+        </div>
+        <table class="packages-table">
+          <thead>
+            <tr>
+              <th>Tracking Number</th>
+              <th>Sender's Name</th>
+              <th>Arrival Date</th>
+              <th>Current Location</th>
+              <th>Recipient's Name</th>
+              <th>Contact Number</th>
+              <th>Delivery Address</th>
+              <th>Delivered</th>
+            </tr>
+          </thead>
+          <tbody id="adminPaketatBody">
+            <!-- Paketat do të shfaqen këtu me JavaScript -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <script src="../admin.js"></script>
+  </body>
+</html>

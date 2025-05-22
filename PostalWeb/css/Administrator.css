@@ -1,0 +1,517 @@
+/* Stilimi i përgjithshëm */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', Arial, sans-serif;
+}
+
+body {
+  background: linear-gradient(to bottom right, #fdcc04, #ffc93c);
+  color: #000;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Navbar modern */
+/* Navbar Styling */
+/* Navbar Styling */
+nav {
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  background: #fdcc04; /* Background i verdhë për navbar */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Hije më e butë dhe moderne */
+  flex-wrap: wrap;
+  border-radius: 10px; /* Këndet e rrumbullakosura për një pamje më moderne */
+}
+
+/* Logo */
+.logo {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #000; /* Logo e zezë për kontrast të lartë me backgroundin e verdhë */
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+/* Ndryshimi i ngjyrës kur logo kalon mbi të */
+.logo:hover {
+  color: #fff; /* Logo bëhet e bardhë kur kalon mbi të */
+}
+
+/* Lidhjet në navbar */
+nav a {
+  text-decoration: none;
+  color: #000; /* Lidhjet bëhen të zeza për kontrast të lartë */
+  font-weight: 500;
+  font-size: 1.1rem;
+  margin: 0 1rem;
+  transition: color 0.3s ease;
+}
+
+/* Ndryshimi i ngjyrës për lidhjet gjatë hover-it */
+nav a:hover {
+  color: #fff; /* Lidhjet bëhen të bardha kur kalon mbi to */
+}
+
+/* Butonat */
+button {
+  padding: 1rem 2.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  background: #fdcc04; /* Ngjyra e verdhë për butonat */
+  color: #000;
+  cursor: pointer;
+  border-radius: 25px;
+  transition: all 0.4s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Ndryshimi i ngjyrës gjatë hover-it për butonat */
+button:hover {
+  background: #ffc93c; /* Një ngjyrë më e errët e verdhë gjatë hover-it */
+  transform: translateY(-3px);
+}
+
+/* ---------------------------  Welcome Admin  -----------------  */
+/* Hero më elegant */
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* ngre përmbajtjen më lart */
+  align-items: center;
+  height: 50vh; /* mund ta zvogëlosh nëse do më shumë ngjeshje */
+  text-align: center;
+  padding-top: 2rem; /* rregullo këtë sipas shijes */
+}
+
+
+.hero h1 {
+  font-size: 3.7rem;
+  font-weight: bold;
+  color: black;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  letter-spacing: 1.5px;
+  animation: fadeInScale 2s ease-in-out;
+}
+
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.hero p {
+  font-size: 1.4rem;
+  margin-bottom: 2rem;
+  color: #000;
+  line-height: 1.8;
+}
+
+/* Butona smooth */
+button {
+  padding: 1rem 2.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  color: #000;
+  background: #fdcc04;
+  cursor: pointer;
+  border-radius: 25px;
+  transition: all 0.4s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+button:hover {
+  background: #ffc93c;
+  transform: translateY(-3px);
+}
+
+/* Form Section */
+.form-section {
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  margin: 2rem auto;
+  width: 90%;
+  max-width: 500px;
+}
+
+form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background: #f7f7f7;
+  color: #000;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+form input:focus,
+form textarea:focus {
+  border-color: #fdcc04;
+  box-shadow: 0 0 10px rgba(253, 204, 4, 0.6);
+  outline: none;
+}
+
+button.submit-button {
+  width: 100%;
+  padding: 1rem;
+  background: #fdcc04;
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: bold;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+button.submit-button:hover {
+  background: #ffc93c;
+  transform: scale(1.05);
+}
+
+/* Smaller table */
+.data-table {
+  width: 90%;
+  margin: 2rem auto;
+  border-collapse: collapse;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+.data-table th {
+  background: #fdcc04;
+  color: #000;
+  font-weight: bold;
+  padding: 0.6rem;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+.data-table td {
+  background: #fff;
+  color: #000;
+  padding: 0.5rem;
+  font-size: 0.75rem;
+}
+
+.data-table tr:hover {
+  background: linear-gradient(to left, #fdcc04, #ffc93c);
+  transform: scale(1.02);
+  transition: all 0.3s ease;
+}
+
+/* Admin Packages Section */
+.admin-packages-section {
+  margin: 20px auto;
+  width: 95%;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.packages-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.packages-table th,
+.packages-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.packages-table th {
+  background-color: #fdcc04;
+  color: #333;
+  font-weight: bold;
+}
+
+.packages-table tr:hover {
+  background-color: #f9f9f9;
+}
+
+.sent {
+  color: green;
+  font-weight: bold;
+}
+
+.unsent {
+  color: red;
+  font-weight: bold;
+}
+
+/* Search Container */
+.search-container {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: 10px;
+  margin: 20px 0;
+  flex-wrap: wrap; /* Lejon wrap për pajisje të vogla */
+}
+
+.search-container input {
+  width: 250px;
+  padding: 12px;
+  border: 2px solid #fdcc04;
+  border-radius: 25px;
+  font-size: 16px;
+  outline: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s ease;
+}
+
+.search-container input:focus {
+  border-color: #ffa500;
+}
+
+.search-container button {
+  background: linear-gradient(135deg, #fdcc04, #ffa500);
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+}
+
+.search-container button:hover {
+  background: linear-gradient(135deg, #ffa500, #fdcc04);
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.search-container button:active {
+  transform: scale(0.95);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.delivered {
+  background-color: red !important;
+  color: white !important;
+}
+
+tr.delivered:hover {
+  background-color: red !important;
+  color: white !important;
+}
+
+tr:hover {
+  background-color: #ee82ee;
+}
+
+.deliver-btn {
+  background-color: #4caf50;
+}
+
+.reset-btn {
+  background-color: #00ffff;
+}
+
+.delete-btn {
+  background-color: #f44336;
+}
+
+/* Media Queries për Responsivitet */
+
+/* Tablete (768px dhe poshtë) */
+@media (max-width: 768px) {
+  .logo {
+    font-size: 1.5rem;
+    margin: 0 auto;
+  }
+
+  nav {
+    flex-direction: column;
+    height: auto;
+    padding: 1rem;
+  }
+
+  nav a {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero p {
+    font-size: 1.2rem;
+  }
+
+  .form-section {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .data-table {
+    width: 95%;
+  }
+
+  .data-table th,
+  .data-table td {
+    font-size: 0.7rem;
+    padding: 0.4rem;
+  }
+
+  .search-container input {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+/* Celularë (480px dhe poshtë) */
+@media (max-width: 480px) {
+  .logo {
+    font-size: 1.2rem;
+  }
+
+  nav {
+    padding: 0.5rem;
+  }
+
+  nav a {
+    font-size: 0.9rem;
+  }
+
+  .hero {
+    height: 50vh;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  button {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  .form-section {
+    padding: 1rem;
+    width: 95%;
+  }
+
+  form input,
+  form textarea {
+    padding: 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  button.submit-button {
+    font-size: 1rem;
+  }
+
+  .data-table {
+    width: 100%;
+  }
+
+  .data-table th,
+  .data-table td {
+    font-size: 0.65rem;
+    padding: 0.3rem;
+  }
+
+  .admin-packages-section {
+    padding: 10px;
+  }
+
+  .packages-table th,
+  .packages-table td {
+    padding: 8px;
+    font-size: 0.8rem;
+  }
+
+  .search-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .search-container input {
+    width: 100%;
+  }
+
+  .search-container button {
+    width: 100%;
+    padding: 10px;
+  }
+}
+
+/* --------------------------------------------------------------------------- */
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: -40px;
+
+}
+
+.tab-button {
+  padding: 10px 20px;
+  margin: 0 10px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #eee;
+  border: none;
+  border-radius: 5px;
+}
+
+.tab-button.active {
+  background-color:
+  color: white;
+}
+
+.table-section {
+  display: none;
+  margin-top: -20px;
+
+}
+
+.active-table {
+  display: block;
+}
+
+
+.tabs-wrapper {
+  margin-top: -100px; /* ky do e ngrejë gjithë pjesën e tabs me tabela */
+}
+

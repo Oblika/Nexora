@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Log In - Nexora</title>
+    <button class="butoni-home" onclick="window.location.href='index.html';">Home Page</button>
+
+    <link rel="stylesheet" href="../css/LogIn.css" />
+  </head>
+  <body>
+    <nav>
+        <div class="logo">Nexora</div>
+    </nav>
+
+    <section class="login">
+      <div class="login-container">
+        <div class="login-header">
+          <h1>Welcome Back</h1>
+          <p>Select your role and access your account!</p>
+        </div>
+        <form>
+          <label for="role">Role</label>
+          <select id="role" name="role">
+            <option value="admin">Administrator</option>
+            <option value="courier">Courier</option>
+          </select>
+
+          <label for="username">Username</label>
+          <input type="text" id="username" placeholder="Enter your username..." />
+
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="Enter your password..." />
+
+          <button type="submit" class="button">Log In</button>
+        </form>
+        <div class="extra-links">
+          <a href="#">Forgot password?</a>
+          <a href="#">Create an account</a>
+        </div>
+      </div>
+    </section>
+    <script src="../app.js"></script>
+  </body>
+</html>

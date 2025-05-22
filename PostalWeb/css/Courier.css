@@ -1,0 +1,342 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fdcc04;
+  color: #444;
+  min-height: 100vh; /* Siguron lartësi të plotë */
+  overflow-x: hidden; /* Parandalon scrollbar horizontal */
+}
+
+.courier-packages-section {
+  max-width: min(90%, 1200px); /* Gjerësia maksimale 1200px, por 90% në ekrane të vogla */
+  margin: 2rem auto;
+  background: #fff;
+  padding: clamp(1.5rem, 5vw, 2.5rem); /* Padding dinamik */
+  border-radius: 16px;
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.courier-packages-section:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+  text-align: center;
+  font-size: clamp(1.8rem, 5vw, 2.2rem); /* Madhësi dinamike */
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 1.5rem;
+  margin-left: 0; /* Heqim margin-left negativ për përgjegjshmëri */
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap; /* Lejon wrap në ekrane të vogla */
+  gap: 1rem; /* Hapësirë midis elementëve */
+}
+
+#searchInput {
+  padding: 0.8rem 1.2rem;
+  width: min(100%, 350px); /* Gjerësia maksimale 350px, por 100% në ekrane të vogla */
+  border: 2px solid #ddd;
+  border-radius: 12px;
+  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
+}
+
+#searchInput:focus {
+  border-color: #0078d7;
+  box-shadow: 0 0 8px rgba(0, 120, 215, 0.5);
+}
+
+button {
+  padding: 0.8rem 1.5rem;
+  background-color: #0078d7;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #005bb5;
+  transform: scale(1.05); /* Zvogëlojmë pak efektin scale për butësi */
+}
+
+.butoni-home {
+  position: fixed; /* Fixed për të qëndruar në vend gjatë scroll */
+  left: clamp(15px, 3vw, 35px);
+  top: clamp(15px, 3vw, 35px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: clamp(80px, 10vw, 120px); /* Gjerësia dinamike */
+  padding: 0.8rem;
+  background: #000;
+  color: #fdcc04;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: clamp(0.8rem, 2.5vw, 1rem);
+  font-weight: bold;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
+  z-index: 1000; /* Siguron që butoni të jetë mbi elementët e tjerë */
+}
+
+.butoni-home:hover {
+  background: #ff0000;
+  color: #fdcc04;
+  box-shadow: 0 8px 16px rgba(255, 0, 0, 0.6);
+  transform: scale(1.05);
+}
+
+.packages-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 2rem;
+  background-color: #000;
+  color: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  table-layout: auto; /* Lejon kolonat të përshtaten me përmbajtjen */
+}
+
+.packages-table th,
+.packages-table td {
+  padding: 0.8rem;
+  text-align: left;
+  border-bottom: 1px solid #333;
+  word-wrap: break-word;
+  word-break: break-word;
+  font-size: clamp(0.8rem, 2.5vw, 1rem);
+}
+
+.packages-table td {
+  max-width: 100%; /* Heqim kufizimin strikt për të lejuar përshtatje */
+}
+
+.packages-table tr:nth-child(even) {
+  background-color: #1a1a1a;
+}
+
+.packages-table tr:hover {
+  background-color: #333;
+}
+
+.pulse {
+  animation: pulseAnimation 1s;
+}
+
+@keyframes pulseAnimation {
+  0% { background-color: #ffff99; }
+  50% { background-color: #ffffff; }
+  100% { background-color: #ffff99; }
+}
+
+.packages-table input[type="text"] {
+  padding: 0.6rem;
+  border: 2px solid #ccc;
+  borderLimitations: 8px;
+  width: 100%;
+  background-color: #fff;
+  color: #000;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  box-sizing: border-box;
+}
+
+.packages-table input[readonly] {
+  background-color: #eaeaea;
+  cursor: not-allowed;
+}
+
+.packages-table th {
+  background-color: #fdcc04;
+  color: #000;
+}
+
+.error {
+  color: red;
+}
+
+.success {
+  color: green;
+}
+
+/* Formulari i Kontaktit */
+.form-container {
+  width: 100%;
+  padding: clamp(1rem, 5vw, 2rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #fdcc04;
+}
+
+.contact-form {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(15px);
+  border-radius: 25px;
+  padding: clamp(1.5rem, 5vw, 2.5rem);
+  max-width: min(90%, 650px); /* Gjerësia dinamike */
+  width: 100%;
+  margin: 2rem auto;
+  box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.15);
+  animation: slideIn 1s ease forwards;
+  opacity: 0;
+  transform: translateY(-30px);
+}
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.contact-form h1 {
+  text-align: center;
+  color: #f5b700;
+  margin-bottom: 1rem;
+  font-size: clamp(1.8rem, 5vw, 2.2rem);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 2px solid #fdcc04;
+  border-radius: 18px;
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
+  background: #fffef5;
+  color: #333;
+  transition: all 0.3s ease-in-out;
+  margin-bottom: 0.8rem;
+  box-sizing: border-box;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  background-color: #fffacd;
+  border-color: #f5c400;
+  outline: none;
+  box-shadow: 0px 0px 10px #ffe066;
+  transform: scale(1.02);
+}
+
+.contact-form textarea {
+  min-height: 120px; /* Zvogëlojmë pak lartësinë për ekrane të vogla */
+  resize: vertical;
+}
+
+.contact-form button {
+  width: 100%;
+  padding: 0.8rem;
+  background: linear-gradient(90deg, #fdcc04, #f5b700);
+  border: none;
+  border-radius: 18px;
+  font-weight: bold;
+  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0px 8px 20px rgba(245, 183, 0, 0.4);
+}
+
+.contact-form button:hover {
+  background: linear-gradient(90deg, #f5b700, #fdcc04);
+  transform: translateY(-4px);
+  box-shadow: 0px 12px 24px rgba(245, 183, 0, 0.7);
+}
+
+/* Media Queries për ekrane të vogla */
+@media (max-width: 768px) {
+  .courier-packages-section {
+    padding: 1.5rem;
+    margin: 1rem;
+  }
+
+  h2 {
+    font-size: clamp(1.5rem, 4vw, 1.8rem);
+  }
+
+  #searchInput {
+    width: 100%;
+  }
+
+  button {
+    padding: 0.6rem 1rem;
+    font-size: clamp(0.8rem, 2vw, 1rem);
+  }
+
+  .butoni-home {
+    width: clamp(60px, 15vw, 100px);
+    font-size: clamp(0.7rem, 2vw, 0.9rem);
+  }
+
+  .packages-table th,
+  .packages-table td {
+    padding: 0.6rem;
+    font-size: clamp(0.7rem, 2vw, 0.9rem);
+  }
+
+  .contact-form {
+    padding: 1.5rem;
+  }
+
+  .contact-form h1 {
+    font-size: clamp(1.5rem, 4vw, 1.8rem);
+  }
+
+  .contact-form button {
+    font-size: clamp(0.8rem, 2vw, 1rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .courier-packages-section {
+    padding: 1rem;
+  }
+
+  .search-container {
+    flex-direction: column; /* Stack elementët vertikalisht */
+    gap: 0.5rem;
+  }
+
+  #searchInput,
+  button {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .packages-table {
+    display: block; /* Për të bërë tabelën të përgjegjshme */
+    overflow-x: auto; /* Lejon scroll horizontal për tabela në ekrane të vogla */
+  }
+
+  .contact-form {
+    padding: 1rem;
+  }
+
+  .contact-form textarea {
+    min-height: 100px;
+  }
+}

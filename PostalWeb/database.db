@@ -1,0 +1,50 @@
+CREATE DATABASE paketadb;
+
+USE paketadb;
+
+CREATE TABLE paketat (
+    numriPaketes VARCHAR(50) NOT NULL PRIMARY KEY,
+    emriDerguesit VARCHAR(100) NOT NULL,
+    kohaArdhjes VARCHAR(50) NOT NULL,
+    vendodhjaPakos VARCHAR(100),
+    emriMarresit VARCHAR(100),
+    email VARCHAR(100),
+    adresa VARCHAR(255)
+);
+
+USE paketadb;
+
+INSERT INTO paketat (numriPaketes, emriDerguesit, kohaArdhjes, vendodhjaPakos, emriMarresit, email, adresa)
+VALUES
+    ('123', 'Tesla', '26 March 2025', 'New York', 'Andrew Tate', 'andrew.tate@example.com', 'California'),
+    ('12345', 'Audi', '26 March 2025', 'Germany', 'MCGregor', 'mcgregor@example.com', 'Hamburger'),
+    ('PK124', 'SpaceX', '27 March 2025', 'Los Angeles', 'Elon Musk', 'elon.musk@example.com', 'Texas'),
+    ('PK125', 'Amazon', '28 March 2025', 'Seattle', 'Jeff Bezos', 'jeff.bezos@example.com', 'Washington');
+
+
+---------------------------------------------------------------------------------------------------------------------
+
+Krijimi i nhe Tabele te re:
+
+USE paketadb;
+
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    role VARCHAR(50) NOT NULL
+);
+
+----------------------------------------------------------------------------------------------------------------------
+USE paketadb;
+
+INSERT INTO users (username, password, role)
+VALUES ('adminUser', 'hashedPassword1', 'admin'),
+       ('courierUser', 'hashedPassword2', 'courier');
+---------------------------------------------------------------------------------------------------------------------
+
+USE paketadb;
+
+
+ALTER TABLE paketat
+ADD COLUMN eshteDorezuar BOOLEAN DEFAULT FALSE;
